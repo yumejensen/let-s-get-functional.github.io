@@ -18,7 +18,6 @@
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
-
 /*
 I: Array of customer objects
 O: Returns the number of male customers
@@ -42,21 +41,24 @@ E:
 // };
 
 
-// work smarter not harder - think back to FILTER
-/*
+/* think back to FILTER
 FILTER will take in data, test each item to see which one passes, then returns an array 
 in maleCount, filter would be useful 
 */
-var maleCount = function(array){
-    const males = _.filter(array, function(customer){
-        return customer.gender === 'male';
-    });
-    // filter method returns an array, get array length to know count
-    return males.length;
-};
+// var maleCount = function(array){
+//     const males = _.filter(array, function(customer){
+//         return customer.gender === 'male';
+//     });
+//     // filter method returns an array, get array length to know count
+//     return males.length;
+// };
+
 
 // now, refactor into an arrow function
-
+var maleCount = function(array){
+    // this is streamlined and can tack on .length property at the end instead of making a new line
+    return _.filter(array, (customer) => customer.gender === 'male').length;
+};
 
 
 var femaleCount;
