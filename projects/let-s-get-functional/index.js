@@ -60,7 +60,9 @@ var maleCount = function(array){
     return _.filter(array, (customer) => customer.gender === 'male').length;
 };
 
+// will be using _.filter() _.map() and _.reduce()
 
+// filter - how many
 var femaleCount;
 
 var oldestCustomer;
@@ -69,14 +71,18 @@ var youngestCustomer;
 
 var averageBalance;
 
+// filter - how many
 var firstLetterCount;
 
+// filter - how many
 var friendFirstLetterCount;
 
+//filter - how many
 var friendsCount;
 
 var topThreeTags;
 
+// filter - how many
 var genderCount;
 
 //////////////////////////////////////////////////////////////////////
