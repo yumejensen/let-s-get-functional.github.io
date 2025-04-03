@@ -62,9 +62,10 @@ var maleCount = function(array){
 
 // will be using _.filter() _.map() and _.reduce()
 
-// filter - how many
+// reduce
 var femaleCount;
 
+// reduce
 var oldestCustomer;
 
 var youngestCustomer;
