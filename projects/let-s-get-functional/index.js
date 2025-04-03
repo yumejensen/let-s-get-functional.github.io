@@ -72,8 +72,16 @@ var youngestCustomer;
 
 var averageBalance;
 
-// filter - how many
-var firstLetterCount;
+// filter - how many customers have a name that begins with inputted <letter>
+/*
+I: Array of data, and a letter (string)
+O: Number of people that have a name which starts with <letter>
+*/
+var firstLetterCount = function(array, letter){
+    // use filter to get an array that meets our conditions -> .length property to get number
+    // filter takes in an array and a callback function
+    return _.filter
+};
 
 // filter - how many
 var friendFirstLetterCount;
