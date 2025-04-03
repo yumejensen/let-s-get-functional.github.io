@@ -1,13 +1,11 @@
-const path = require('path');
-const data = require('../data/customers.json');
-const expect = require('chai').expect;
-const index = require('../index.js');
+// const path = require('path');
+// const data = require('../data/customers.json');
+// const expect = require('chai').expect;
+// const index = require('../index.js');
 
 describe('Let\'s Get Functional', function(){
   describe('maleCount()', function () {
     'use strict';
-
-    const maleCount = index.maleCount;
 
     it('is a function', function () {
       expect(maleCount).to.be.a('function');
@@ -25,8 +23,6 @@ describe('Let\'s Get Functional', function(){
   describe('femaleCount()', function () {
     'use strict';
 
-    const femaleCount = index.femaleCount;
-
     it('is a function', function () {
       expect(femaleCount).to.be.a('function');
     });
@@ -42,8 +38,6 @@ describe('Let\'s Get Functional', function(){
 
   describe('oldestCustomer()', function () {
     'use strict';
-
-    const oldestCustomer = index.oldestCustomer;
 
     it('is a function', function () {
       expect(oldestCustomer).to.be.a('function');
@@ -61,8 +55,6 @@ describe('Let\'s Get Functional', function(){
   describe('youngestCustomer()', function () {
     'use strict';
 
-    const youngestCustomer = index.youngestCustomer;
-
     it('is a function', function () {
       expect(youngestCustomer).to.be.a('function');
     });
@@ -78,8 +70,6 @@ describe('Let\'s Get Functional', function(){
 
   describe('averageBalance()', function () {
     'use strict';
-
-    const averageBalance = index.averageBalance;
 
     it('is a function', function () {
       expect(averageBalance).to.be.a('function');
@@ -99,7 +89,6 @@ describe('Let\'s Get Functional', function(){
   describe('firstLetterCount()', function () {
     'use strict';
 
-    const firstLetterCount = index.firstLetterCount;
 
     it('is a function', function () {
       expect(firstLetterCount).to.be.a('function');
@@ -134,8 +123,6 @@ describe('Let\'s Get Functional', function(){
 
   describe('friendFirstLetterCount()', function () {
     'use strict';
-
-    const friendFirstLetterCount = index.friendFirstLetterCount;
 
     it('is a function', function () {
       expect(friendFirstLetterCount).to.be.a('function');
@@ -173,7 +160,6 @@ describe('Let\'s Get Functional', function(){
   describe('friendsCount()', function () {
     'use strict';
 
-    const friendsCount = index.friendsCount;
 
     it('is a function', function () {
       expect(friendsCount).to.be.a('function');
@@ -219,7 +205,6 @@ describe('Let\'s Get Functional', function(){
   describe('topThreeTags()', function () {
     'use strict';
 
-    const topThreeTags = index.topThreeTags;
 
     it('is a function', function () {
       expect(topThreeTags).to.be.a('function');
@@ -242,8 +227,6 @@ describe('Let\'s Get Functional', function(){
 
   describe('genderCount()', function () {
     'use strict';
-
-    const genderCount = index.genderCount;
 
     it('is a function', function () {
       expect(genderCount).to.be.a('function');
