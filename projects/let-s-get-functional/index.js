@@ -80,18 +80,40 @@ O: Number of people that have a name which starts with <letter>
 var firstLetterCount = function(array, letter){
     // use filter to get an array that meets our conditions -> .length property to get number
     // filter takes in an array and a callback function
-    return _.filter
+
+    // make a variable to hold filtered array
+    const firstLetter = _.filter(array, function(customer){
+        // callback func will return IF first letter === input letter
+        // force each to lowercase to make it case insensitive
+        return customer.name[0].toLowerCase() === letter.toLowerCase();
+    })
+    // return the length of filtered array
+    return firstLetter.length;
 };
 
-// filter - how many
-var friendFirstLetterCount;
+// filter - how many friends have a name that begin with inputted <letter>
+/*
+I: Array of data, a person, and a letter (string)
+O: Number of friends that <person> has with name beginning with <letter>
+*/
+var friendFirstLetterCount = function(array, customer, letter){
+    // make a variable with filter to get array of friends that start with letter (for input customer)
+    const friendFirstLetter = _.filter(array, function(customer, letter){
+        // if first letter equal to customer.friends[0]
+        for (let i = 0; i < customer.friends; i++){
+            customer.friends[i][0].toLowerCase() === letter.toLowerCase()
+        }
+        return friendFirstLetter.length;
+    })
+}
 
 //filter - how many
 var friendsCount;
 
+//
 var topThreeTags;
 
-// filter - how many
+// 
 var genderCount;
 
 //////////////////////////////////////////////////////////////////////
