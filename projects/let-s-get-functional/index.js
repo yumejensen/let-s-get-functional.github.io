@@ -158,6 +158,7 @@ var genderCount = function(array){
 // REDUCE TOWN HALL PRACTICE 4-4-25
 // -----------------------------------------------------------------------------------------------------------------------
 
+
 // #1 Example with Array of Nums -----------------------------------------------------------------------------------------
 
 // use reduce to get sum of all numbers in nums
@@ -194,7 +195,6 @@ var sum = _.reduce(nums, function (accumulator, num){
 
 
 
-    
 // #2 Example with Array of Blog Objects ----------------------------------------------------------------------------------
 const blogs = [
   {
@@ -245,7 +245,7 @@ function getTitlesOfSportsBlogs(array){
 }
 // seed value assigned to [] 
 //because we are making a NEW piece of data
-
+//console.log(getTitlesOfSportsBlogs(blogs)); // works!!!
 
 // for this function, we want to find which blog has the most views
 function getMostViewed(array){
@@ -260,6 +260,9 @@ function getMostViewed(array){
 // seed value not assigned 
 //because we already have all the data and we are SEARCHING
 // if not assigned, reduce will start at first item in array and move through
+//console.log(getMostViewed(blogs)); // works!!!
+
+
 
 
 
