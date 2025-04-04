@@ -161,102 +161,102 @@ var genderCount = function(array){
 
 // #1 Example with Array of Nums -----------------------------------------------------------------------------------------
 
-// use reduce to get sum of all numbers in nums
-var nums = [10, 20, 30, 40];
-// reduce needs a SEED VALUE (which will be the same datatype as the return we want)
-// we will be accumulating data and returning a new value
+// // use reduce to get sum of all numbers in nums
+// var nums = [10, 20, 30, 40];
+// // reduce needs a SEED VALUE (which will be the same datatype as the return we want)
+// // we will be accumulating data and returning a new value
 
-var sum = _.reduce(nums, function (accumulator, num){
-    // reduce takes in an array and a callback function
-    // the callback function takes in TWO parameters - an accumulator and curent item in the array
-    accumulator += num;
-    return accumulator;
+// var sum = _.reduce(nums, function (accumulator, num){
+//     // reduce takes in an array and a callback function
+//     // the callback function takes in TWO parameters - an accumulator and curent item in the array
+//     accumulator += num;
+//     return accumulator;
 
-}, 0)
-// 0 is the seed value
-// seed value = first value of accumulator
+// }, 0)
+// // 0 is the seed value
+// // seed value = first value of accumulator
 
-//1st Iteration
-    //let result = 0
-    //for loop
-        //i = 0
-        // result = func (0, 10)
-        // 0 + 10
-        // result = 10
-//2nd Iteration
-    //let result = 10
-    //for loop
-        //i = 0
-        // result = func (10, 20)
-        // 10 + 20
-        // result = 30
-// Last Iteration (4th)
-    // result will equal 100
+// //1st Iteration
+//     //let result = 0
+//     //for loop
+//         //i = 0
+//         // result = func (0, 10)
+//         // 0 + 10
+//         // result = 10
+// //2nd Iteration
+//     //let result = 10
+//     //for loop
+//         //i = 0
+//         // result = func (10, 20)
+//         // 10 + 20
+//         // result = 30
+// // Last Iteration (4th)
+//     // result will equal 100
 
 
 
-// #2 Example with Array of Blog Objects ----------------------------------------------------------------------------------
-const blogs = [
-  {
-    id: 0,
-    title: 'Rewatched Psycho last night.',
-    text: 'Phenomenal.',
-    author: 'Alex Aaron',
-    views: 101,
-    category: 'TV & Film'
-  },
-  {
-    id: 1,
-    title: "Did y'all see Curry go off for 52??",
-    text: "He's still one of the best.",
-    author: 'Buena Baker',
-    views: 50,
-    category: 'Sports'
-  },
-  {
-    id: 2,
-    title: "Saw Misericordia at the Broad theater last night.",
-    text: "Really interesting film and a packed house.",
-    author: 'Alex Aaron',
-    views: 65,
-    category: 'TV & Film'
-  },
-  {
-    id: 3,
-    title: "Look at my pottery creations!",
-    text: "I'm eager to try some sgraffito next.",
-    author: 'Stephanie Cooper',
-    views: 78,
-    category: 'Arts & Culture'
-  }
-];
+// // #2 Example with Array of Blog Objects ----------------------------------------------------------------------------------
+// const blogs = [
+//   {
+//     id: 0,
+//     title: 'Rewatched Psycho last night.',
+//     text: 'Phenomenal.',
+//     author: 'Alex Aaron',
+//     views: 101,
+//     category: 'TV & Film'
+//   },
+//   {
+//     id: 1,
+//     title: "Did y'all see Curry go off for 52??",
+//     text: "He's still one of the best.",
+//     author: 'Buena Baker',
+//     views: 50,
+//     category: 'Sports'
+//   },
+//   {
+//     id: 2,
+//     title: "Saw Misericordia at the Broad theater last night.",
+//     text: "Really interesting film and a packed house.",
+//     author: 'Alex Aaron',
+//     views: 65,
+//     category: 'TV & Film'
+//   },
+//   {
+//     id: 3,
+//     title: "Look at my pottery creations!",
+//     text: "I'm eager to try some sgraffito next.",
+//     author: 'Stephanie Cooper',
+//     views: 78,
+//     category: 'Arts & Culture'
+//   }
+// ];
 
-// for this function we want the TITLES of the sports blogs as an array
-// reduce is a good method for this because filter will only return whole object not the specific item inside
-function getTitlesOfSportsBlogs(array){
-    return _.reduce(array, function(accumulator, blog){
-        // check if blog category is sports blog
-        if (blog.category === 'Sports'){
-            // if it is, PUSH the blog title into our empty array
-            accumulator.push(blog.title);
-        }
-        return accumulator;
-    }, []);
-}
-// seed value assigned to [] 
-//because we are making a NEW piece of data
-//console.log(getTitlesOfSportsBlogs(blogs)); // works!!!
+// // for this function we want the TITLES of the sports blogs as an array
+// // reduce is a good method for this because filter will only return whole object not the specific item inside
+// function getTitlesOfSportsBlogs(array){
+//     return _.reduce(array, function(accumulator, blog){
+//         // check if blog category is sports blog
+//         if (blog.category === 'Sports'){
+//             // if it is, PUSH the blog title into our empty array
+//             accumulator.push(blog.title);
+//         }
+//         return accumulator;
+//     }, []);
+// }
+// // seed value assigned to [] 
+// //because we are making a NEW piece of data
+// //console.log(getTitlesOfSportsBlogs(blogs)); // works!!!
 
-// for this function, we want to find which blog has the most views
-function getMostViewed(array){
-    return _.reduce(array, function(accumulator, blog){
-        if (blog.views > accumulator.views){
-            return blog;
-        } else {
-            return accumulator;
-        }
-    });
-}
+// // for this function, we want to find which blog has the most views
+// function getMostViewed(array){
+//     return _.reduce(array, function(accumulator, blog){
+//         if (blog.views > accumulator.views){
+//             return blog;
+//         } else {
+//             return accumulator;
+//         }
+//     });
+// }
 // seed value not assigned 
 //because we already have all the data and we are SEARCHING
 // if not assigned, reduce will start at first item in array and move through
