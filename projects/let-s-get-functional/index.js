@@ -34,8 +34,6 @@ They take in a collection and a callback function
 /*
 I: Array of customer objects
 O: Returns the number of male customers
-C:
-E:
 */
 
 // version of solve without filter
@@ -126,8 +124,33 @@ var friendsCount;
 //use reduce but it won't be just reduce
 var topThreeTags;
 
-// 
-var genderCount;
+/*
+I: An arry of customers
+O: An object that lists the number of males, females, and nonbinary
+    {
+        male: 3,
+        female: 4,
+        non-binary: 1
+    }
+C: Use reduce (reduce can return any data type)
+*/
+var genderCount = function(array){
+    return _.reduce(array, function(accumulator, current){
+        // accumulator = {} and current = {Adele Mullin}
+
+        // determine if current object's gender exists in accumulator as a key
+            // if it does, increment
+        // else 
+            //create key and give initial value
+
+    }, {});
+}
+// seed is {} because we're creating a new object
+
+
+
+
+
 
 
 
