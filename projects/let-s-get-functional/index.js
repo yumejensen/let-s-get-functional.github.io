@@ -156,6 +156,9 @@ var genderCount = function(array){
 
 // -----------------------------------------------------------------------------------------------------------------------
 // REDUCE TOWN HALL PRACTICE 4-4-25
+// -----------------------------------------------------------------------------------------------------------------------
+
+// #1 Example with Array of Nums -----------------------------------------------------------------------------------------
 
 // use reduce to get sum of all numbers in nums
 var nums = [10, 20, 30, 40];
@@ -189,6 +192,10 @@ var sum = _.reduce(nums, function (accumulator, num){
 // Last Iteration (4th)
     // result will equal 100
 
+
+
+    
+// #2 Example with Array of Blog Objects ----------------------------------------------------------------------------------
 const blogs = [
   {
     id: 0,
