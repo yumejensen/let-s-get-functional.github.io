@@ -18,6 +18,19 @@
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
+
+//NOTES ON: MAP - FILTER - EACH - REDUCE
+// all of them are higher order functions
+/*
+They take in a collection and a callback function
+
+
+*/
+
+
+
+
+
 /*
 I: Array of customer objects
 O: Returns the number of male customers
