@@ -23,8 +23,9 @@
 // all of them are higher order functions
 /*
 They take in a collection and a callback function
-
-
+Filter returns an array that meets conditions of callback
+Map returns an array where everything is passed through callback
+Reduce "accumulates" a value and returns it based on the callback
 */
 
 
