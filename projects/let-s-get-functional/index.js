@@ -19,6 +19,8 @@
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
+
+//------------------------------------------------------------------------------------------------------------------------------------------
 //NOTES ON: MAP - FILTER - EACH - REDUCE
 // all of them are higher order functions
 /*
@@ -28,15 +30,10 @@ Map returns an array where everything is passed through callback
 Reduce "accumulates" a value and returns it based on the callback
 */
 
-
-
-
-
 /*
 I: Array of customer objects
 O: Returns the number of male customers
 */
-
 // version of solve without filter
 // var maleCount = function(array) {
 //     //create a variable for the number of males
@@ -53,7 +50,7 @@ O: Returns the number of male customers
 // };
 
 
-/* think back to FILTER
+/* now think back to FILTER
 FILTER will take in data, test each item to see which one passes, then returns an array 
 in maleCount, filter would be useful 
 */
@@ -66,13 +63,11 @@ in maleCount, filter would be useful
 // };
 
 
-// now, refactor into an arrow function
+// refactor into an arrow function
 var maleCount = function(array){
     // this is streamlined and can tack on .length property at the end instead of making a new line
     return _.filter(array, (customer) => customer.gender === 'male').length;
 };
-
-// will be using _.filter() _.map() and _.reduce()
 
 // reduce
 var femaleCount;
