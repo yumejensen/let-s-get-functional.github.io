@@ -103,16 +103,15 @@ var firstLetterCount = function(array, letter){
 I: Array of data, a person, and a letter (string)
 O: Number of friends that <person> has with name beginning with <letter>
 */
-var friendFirstLetterCount = function(array, customer, letter){
+var friendFirstLetterCount = function(array, customer, letter, count=0){
     // make a variable with filter to get array of friends that start with letter (for input customer)
     const friendFirstLetter = _.filter(array, function(customer, letter){
         // if first letter equal to customer.friends[0]
-        for (let i = 0; i < customer.friends; i++){
-            customer.friends[i][0].toLowerCase() === letter.toLowerCase()
-        }
-        return friendFirstLetter.length;
-    })
+        return customer.friends[i][0].toLowerCase() === letter.toLowerCase();
+    });
 }
+
+
 
 //filter - how many
 var friendsCount;
