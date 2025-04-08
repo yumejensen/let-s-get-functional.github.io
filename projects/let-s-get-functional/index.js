@@ -89,14 +89,15 @@ var firstLetterCount = function(array, letter){
     // filter takes in an array and a callback function
 
     // make a variable to hold filtered array
-    const firstLetter = _.filter(array, function(customer){
+    return _.filter(array, function(customer){
         // callback func will return IF first letter === input letter
         // force each to lowercase to make it case insensitive
-        return customer.name[0].toLowerCase() === letter.toLowerCase();
+        customer.name[0].toLowerCase() === letter.toLowerCase();
     })
     // return the length of filtered array
-    return firstLetter.length;
 };
+
+console.log(firstLetterCount(data, 'b'));
 
 // filter - how many friends have a name that begin with inputted <letter>
 /*
