@@ -68,16 +68,25 @@ var maleCount = function(array){
     // this is streamlined and can tack on .length property at the end instead of making a new line
     return _.filter(array, (customer) => customer.gender === 'male').length;
 };
+//-----------------------------------------------------------------------------------------------------------------------------
 
 // reduce
 var femaleCount;
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
 // reduce
 var oldestCustomer;
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
 var youngestCustomer;
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
 var averageBalance;
+
+//-----------------------------------------------------------------------------------------------------------------------------
 
 // filter - how many customers have a name that begins with inputted <letter>
 /*
@@ -99,6 +108,8 @@ var firstLetterCount = function(array, letter){
 
 console.log(firstLetterCount(data, 'b'));
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
 // filter - how many friends have a name that begin with inputted <letter>
 /*
 I: Array of data, a person, and a letter (string)
@@ -112,13 +123,17 @@ var friendFirstLetterCount = function(array, customer, letter, count=0){
     });
 }
 
-
+//-----------------------------------------------------------------------------------------------------------------------------
 
 //filter - how many
 var friendsCount;
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
 //use reduce but it won't be just reduce
 var topThreeTags;
+
+//-----------------------------------------------------------------------------------------------------------------------------
 
 /*
 I: An arry of customers
