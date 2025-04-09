@@ -162,20 +162,21 @@ var genderCount = function(array){
         // else 
             //create key and give initial value
       if (current.gender === "female"){
-        accumulator.female += 1;
+        accumulator.female + 1;
       } else if (!accumulator.female){
         accumulator.female = 0;
       };
       if (current.gender === "male"){
-        accumulator.male += 1;
+        accumulator.male + 1;
       } else if (!accumulator.male){
         accumulator.male = 0;
       };
       if (current.gender === "non-binary"){
-        accumulator['non-binary'] += 1;
+        accumulator['non-binary'] + 1;
       } else if (!accumulator['non-binary']){
         accumulator['non-binary'] = 0;
       };
+      return accumulator;
     }, {});
 };
 
