@@ -70,8 +70,18 @@ var maleCount = function(array){
 };
 //-----------------------------------------------------------------------------------------------------------------------------
 
-// reduce
-var femaleCount;
+// reduce - find number of "female"
+var femaleCount = function(array){
+    // reduce takes in an array and a callback function
+    return _.reduce(array, (accumulator, current) => {
+      // callback func will find the female count and add it to accumulator
+      // is current gender is female, add it to accumulator
+      if (current.gender === "female"){
+        accumulator += 1;
+      }
+      return accumulator;
+    }, 0); // seed is 0 because we want a number
+  };
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
