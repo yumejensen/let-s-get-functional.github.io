@@ -158,21 +158,20 @@ C: Use reduce (reduce can return any data type)
 var genderCount = function(array){
     return _.reduce(array, function(accumulator, current){
         // determine if current object's gender exists in accumulator as a key
-      // if it does, increment
-        // else 
-            //create key and give initial value
       if (current.gender === "female"){
-        accumulator.female + 1;
+        // if it does, increment
+        accumulator.female += 1;
       } else if (!accumulator.female){
+        // if it doesn't exist, create key and give initial value
         accumulator.female = 0;
       };
       if (current.gender === "male"){
-        accumulator.male + 1;
+        accumulator.male += 1;
       } else if (!accumulator.male){
         accumulator.male = 0;
       };
       if (current.gender === "non-binary"){
-        accumulator['non-binary'] + 1;
+        accumulator['non-binary'] += 1;
       } else if (!accumulator['non-binary']){
         accumulator['non-binary'] = 0;
       };
