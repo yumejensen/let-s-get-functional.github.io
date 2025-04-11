@@ -158,26 +158,31 @@ C: Use reduce (reduce can return any data type)
 var genderCount = function(array){
   // try adding a default parameter for the count???
     return _.reduce(array, function(acc, current){
-        // if female key doesn't exist
+      // if female key doesn't exist and current gender is female
       if (!acc['female'] && current.gender === "female"){
-        //add it to genderObj
+        //add female key to acc and give it value of 1
         acc['female'] = 1;
+        // if it does exist, add 1 to count
       } else if (current.gender === "female"){
         acc['female'] += 1;
       };
+      // if male key doesn't exist and current gender is male
       if (!acc['male'] && current.gender === "male"){
-        //add it to genderObj
+        //add male key to acc and give it value of 1
         acc['male'] = 1;
+        // if it does exist, add 1 to count
       } else if (current.gender === "male"){
         acc['male'] += 1;
       };
+      // if non-binary key doesn't exist and current gender is non-binary
       if (!acc['non-binary'] && current.gender === "non-binary"){
-        //add it to genderObj
+        //add non-binary key to acc and give it value of 1
         acc['non-binary'] = 1;
+        // if it does exist, add 1 to count
       } else if (current.gender === "non-binary"){
         acc['non-binary'] += 1;
       };
-      return genderObj;
+      return acc;
     }, {});
 };
 
