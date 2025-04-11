@@ -182,6 +182,23 @@ O: An object that lists the number of males, females, and nonbinary
 C: Use reduce (reduce can return any data type)
 */
 
+// VERSION 2 - WILL CREATE AN OBJECT WITH EVERY GENDER
+var genderCount = function(array){
+  // try adding a default parameter for the count???
+    return _.reduce(array, function(acc, current){
+      // acc is {} // current is {max}
+      // does this exist as a key?
+      // on first iteration  it reads as if (!acc['female'])
+      if (!acc[current.gender]){
+        acc[current.gender] = 1;
+      } else {
+        acc[current.gender] += 1;
+      }
+      return acc;
+    }, {});
+};
+
+
 //1ST VERSION - HARD CODING FOR FEMALE MALE NON-BINARY
 // var genderCount = function(array){
 //     return _.reduce(array, function(acc, current){
@@ -214,23 +231,6 @@ C: Use reduce (reduce can return any data type)
 //     }, {});
 // };
 // seed is {} because we're creating a new object
-
-// VERSION 2 - WILL CREATE AN OBJECT WITH EVERY GENDER
-var genderCount = function(array){
-  // try adding a default parameter for the count???
-    return _.reduce(array, function(acc, current){
-      // acc is {} // current is {max}
-      // does this exist as a key?
-      // on first iteration  it reads as if (!acc['female'])
-      if (!acc[current.gender]){
-        acc[current.gender] = 1;
-      } else {
-        acc[current.gender] += 1;
-      }
-      return acc;
-    }, {});
-};
-
 
 
 
