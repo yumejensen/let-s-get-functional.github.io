@@ -119,8 +119,20 @@ var youngestCustomer = function(array){
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------
+// find average balance of customers
+// balance looks like "$1005.44" so we need to turn this string into a number
 
-var averageBalance;
+// reduce can be used for this? i think?
+var averageBalance = (array) => {
+  return _.reduce(array, (acc, current) => {
+    // make variable for balance, change into a number (slice $ and change to number)
+    let numberBalance = Number(current.balance.replace(/[$,]/g, ''));
+    // add all balances to acc
+    acc += numberBalance;
+    return acc;
+    // return total, divide by number of customers at end
+  }, 0)/ array.length;
+};
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
