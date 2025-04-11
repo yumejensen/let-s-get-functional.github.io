@@ -85,11 +85,23 @@ var femaleCount = function(array){
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-// reduce
-var oldestCustomer;
+// reduce - find the oldest customer
+var oldestCustomer = function(array){
+  // use reduce, takes in array and callback func(acc, current)
+  return _.reduce(array, (acc, current) => {
+    // if current index 
+    if (current.age > acc.age){
+      return current;
+    } else {
+      return acc;
+    }
+  }).name;
+  // don't need a seed value
+}
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
+// reduce - 
 var youngestCustomer;
 
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -181,10 +193,10 @@ var genderCount = function(array){
       } else if (current.gender === "non-binary"){
         acc['non-binary'] += 1;
       };
+      // return the object with the gender keys + count
       return acc;
     }, {});
 };
-
 // seed is {} because we're creating a new object
 
 
