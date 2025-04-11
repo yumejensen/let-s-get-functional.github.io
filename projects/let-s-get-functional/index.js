@@ -89,20 +89,34 @@ var femaleCount = function(array){
 var oldestCustomer = function(array){
   // use reduce, takes in array and callback func(acc, current)
   return _.reduce(array, (acc, current) => {
-    // if current index 
+    // if current index is older, return it 
     if (current.age > acc.age){
       return current;
     } else {
+      // when code reaches oldest, return oldest
       return acc;
     }
   }).name;
   // don't need a seed value
+  // .name to return the name
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-// reduce - 
-var youngestCustomer;
+// reduce - find the youndest customer
+var youngestCustomer = function(array){
+  // return reduce: takes in an array and callback func(acc, current)
+  return _.reduce(array, (acc, current) => {
+    // is the current age is younger, return it
+    if (current.age < acc.age){
+      return current;
+      // else when code hits youngest, return youngest
+    } else {
+      return acc;
+    }
+  }).name;
+  //.name to return the name
+};
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
@@ -167,6 +181,8 @@ O: An object that lists the number of males, females, and nonbinary
     }
 C: Use reduce (reduce can return any data type)
 */
+
+//1ST VERSION - HARD CODING FOR FEMALE MALE NON-BINARY
 // var genderCount = function(array){
 //     return _.reduce(array, function(acc, current){
 //       // if female key doesn't exist and current gender is female
@@ -199,7 +215,7 @@ C: Use reduce (reduce can return any data type)
 // };
 // seed is {} because we're creating a new object
 
-
+// VERSION 2 - WILL CREATE AN OBJECT WITH EVERY GENDER
 var genderCount = function(array){
   // try adding a default parameter for the count???
     return _.reduce(array, function(acc, current){
