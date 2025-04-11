@@ -156,7 +156,6 @@ O: An object that lists the number of males, females, and nonbinary
 C: Use reduce (reduce can return any data type)
 */
 var genderCount = function(array){
-  // try adding a default parameter for the count???
     return _.reduce(array, function(acc, current){
       // if female key doesn't exist and current gender is female
       if (!acc['female'] && current.gender === "female"){
