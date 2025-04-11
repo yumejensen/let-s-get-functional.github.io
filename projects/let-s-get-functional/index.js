@@ -156,26 +156,28 @@ O: An object that lists the number of males, females, and nonbinary
 C: Use reduce (reduce can return any data type)
 */
 var genderCount = function(array){
-    return _.reduce(array, function(accumulator, current){
-        // determine if current object's gender exists in accumulator as a key
-      if (current.gender === "female"){
-        // if it does, increment
-        accumulator.female += 1;
-      } else if (!accumulator.female){
-        // if it doesn't exist, create key and give initial value
-        accumulator.female = 0;
+  // try adding a default parameter for the count???
+    return _.reduce(array, function(acc, current){
+        // if female key doesn't exist
+      if (!acc['female'] && current.gender === "female"){
+        //add it to genderObj
+        acc['female'] = 1;
+      } else if (current.gender === "female"){
+        acc['female'] += 1;
       };
-      if (current.gender === "male"){
-        accumulator.male += 1;
-      } else if (!accumulator.male){
-        accumulator.male = 0;
+      if (!acc['male'] && current.gender === "male"){
+        //add it to genderObj
+        acc['male'] = 1;
+      } else if (current.gender === "male"){
+        acc['male'] += 1;
       };
-      if (current.gender === "non-binary"){
-        accumulator['non-binary'] += 1;
-      } else if (!accumulator['non-binary']){
-        accumulator['non-binary'] = 0;
+      if (!acc['non-binary'] && current.gender === "non-binary"){
+        //add it to genderObj
+        acc['non-binary'] = 1;
+      } else if (current.gender === "non-binary"){
+        acc['non-binary'] += 1;
       };
-      return accumulator;
+      return genderObj;
     }, {});
 };
 
