@@ -125,7 +125,7 @@ var youngestCustomer = function(array){
 // reduce can be used for this? i think?
 var averageBalance = (array) => {
   return _.reduce(array, (acc, current) => {
-    // make variable for balance, change into a number (slice $ and change to number)
+    // make variable for balance, change into a number (take out $ and , and change to number)
     let numberBalance = Number(current.balance.replace(/[$,]/g, ''));
     // add all balances to acc
     acc += numberBalance;
