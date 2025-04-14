@@ -136,7 +136,6 @@ var averageBalance = (array) => {
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-// filter - how many customers have a name that begins with inputted <letter>
 /*
 I: Array of data, and a letter (string)
 O: Number of people that have a name which starts with <letter>
@@ -144,28 +143,33 @@ O: Number of people that have a name which starts with <letter>
 var firstLetterCount = function(array, letter){
   // use filter to get an array that meets our conditions -> .length property to get number
   // filter takes in an array and a callback function
-return _.filter(array, function(customer){
-  letter.toLowerCase() === customer.name[0].toLowerCase();
-  return customer;
-}).length;
+return _.reduce(array, function(acc, current){
+  if (current.name[0].toLowerCase() === letter.toLowerCase()){
+    acc += 1;
+  }
+  return acc;
+}, 0);  
 };
 
 console.log(firstLetterCount(data, 'b'));
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-// filter - how many friends have a name that begin with inputted <letter>
 /*
 I: Array of data, a person, and a letter (string)
 O: Number of friends that <person> has with name beginning with <letter>
+   "friends" is an array of objects with properties id and name
 */
-var friendFirstLetterCount = function(array, customer, letter, count=0){
-    // make a variable with filter to get array of friends that start with letter (for input customer)
-    const friendFirstLetter = _.filter(array, function(customer, letter){
-        // if first letter equal to customer.friends[0]
-        return customer.friends[i][0].toLowerCase() === letter.toLowerCase();
-    });
-}
+var friendFirstLetterCount = function(array, customer, letter){
+
+  return _.filter(array, function(customer, letter){
+    //let count = 0;
+    // do i need a for loop to go inside inner friends array?
+    for (let i = 0; i < customer.friends.length; i++){
+      letter === customer.friends[i].name[0];
+    }
+  });
+};
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
