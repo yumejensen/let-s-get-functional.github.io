@@ -160,14 +160,22 @@ I: Array of data, a person, and a letter (string)
 O: Number of friends that <person> has with name beginning with <letter>
    "friends" is an array of objects with properties id and name
 */
-var friendFirstLetterCount = function(array, customer, letter){
+var friendFirstLetterCount = function(array, customerName, letter){
 
-  return _.filter(array, function(customer, letter){
-    // do i need a for loop to go inside inner friends array??
-    for (let i = 0; i < customer.friends.length; i++){
-      letter === customer.friends[i].name[0];
+  return _.filter(array, function(customer){
+    if (customerName === customer.name){
+      // for loop to go inside inner friends array 
+      for (let i = 0; i < customer.friends.length; i++){
+      // test if input letter is friend name first letter
+        if(letter.toLowerCase() === customer.friends[i].name[0].toLowerCase()){
+          return true;
+      }
     }
+      
+    }
+    
   }).length;
+  // .length to return length of array
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------
