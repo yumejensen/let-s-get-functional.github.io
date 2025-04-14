@@ -161,21 +161,21 @@ O: Number of friends that <person> has with name beginning with <letter>
    "friends" is an array of objects with properties id and name
 */
 var friendFirstLetterCount = function(array, customerName, letter){
-
-  return _.filter(array, function(customer){
-    if (customerName === customer.name){
-      // for loop to go inside inner friends array 
-      for (let i = 0; i < customer.friends.length; i++){
-      // test if input letter is friend name first letter
-        if(letter.toLowerCase() === customer.friends[i].name[0].toLowerCase()){
-          return true;
-      }
+  // holder array for just the friends
+  var customerFriends = [];
+  // for loop going over the array and checking if array[i].name === customerName
+  for (let i = 0; i < array.length; i++){
+    if (array[i].name.toLowerCase() === customerName){
+      // push the target customer friends into a new array
+      customerFriends.push(array[i].friends);
     }
-      
-    }
-    
+  }
+  //console.log(customerFriends);
+  
+  // filter method to count how many friends with <letter>
+  return _.filter(customerFriends[0], function(friend){
+    return letter.toLowerCase() === friend.name[0].toLowerCase();
   }).length;
-  // .length to return length of array
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------
