@@ -151,7 +151,7 @@ return _.reduce(array, function(acc, current){
 }, 0);  
 };
 
-console.log(firstLetterCount(data, 'b'));
+//console.log(firstLetterCount(data, 'b'));
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
@@ -165,18 +165,20 @@ var friendFirstLetterCount = function(array, customerName, letter){
   var customerFriends = [];
   // for loop going over the array and checking if array[i].name === customerName
   for (let i = 0; i < array.length; i++){
-    if (array[i].name.toLowerCase() === customerName){
+    if (array[i].name.toLowerCase() === customerName.toLowerCase()){
       // push the target customer friends into a new array
       customerFriends.push(array[i].friends);
     }
   }
-  //console.log(customerFriends);
+  console.log(customerFriends);
   
   // filter method to count how many friends with <letter>
   return _.filter(customerFriends[0], function(friend){
     return letter.toLowerCase() === friend.name[0].toLowerCase();
   }).length;
 };
+
+console.log(friendFirstLetterCount(data, "Adele Mullen", "j")); // returns 2
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
