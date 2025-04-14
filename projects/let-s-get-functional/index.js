@@ -163,12 +163,11 @@ O: Number of friends that <person> has with name beginning with <letter>
 var friendFirstLetterCount = function(array, customer, letter){
 
   return _.filter(array, function(customer, letter){
-    //let count = 0;
-    // do i need a for loop to go inside inner friends array?
+    // do i need a for loop to go inside inner friends array??
     for (let i = 0; i < customer.friends.length; i++){
       letter === customer.friends[i].name[0];
     }
-  });
+  }).length;
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------
