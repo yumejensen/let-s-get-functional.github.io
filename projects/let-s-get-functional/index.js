@@ -170,7 +170,7 @@ var friendFirstLetterCount = function(array, customerName, letter){
       customerFriends.push(array[i].friends);
     }
   }
-  console.log(customerFriends);
+  //console.log(customerFriends); //works as expected
   
   // filter method to count how many friends with <letter>
   return _.filter(customerFriends[0], function(friend){
@@ -178,12 +178,36 @@ var friendFirstLetterCount = function(array, customerName, letter){
   }).length;
 };
 
-console.log(friendFirstLetterCount(data, "Adele Mullen", "j")); // returns 2
+//console.log(friendFirstLetterCount(data, "Adele Mullen", "j")); // returns 2
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-//filter - how many
-var friendsCount;
+/*
+I: an array + name
+O: an array
+
+*/
+var friendsCount = function(array, inputName){
+  // filter method to return an array
+  const friendsArray = _.filter(array, function(customer){
+    // for loop for inner friends array
+    for (let i = 0; i < customer.friends.length; i++){
+      if (customer.friends[i].name === inputName){
+      // return true - filter method is designed to push thing for which statement is truthy
+        return true;
+      }
+    }
+  }); // friendsArray is our filtered array for which inputName is a friend
+  
+  // RETURN reduce method on friendsArray to just get the names
+  return _.reduce(friendsArray, (acc, current) => {
+    acc.push(current.name);
+    return acc;
+  }, [])
+  // seed is empty array
+};
+
+//console.log(friendsCount(data, "Olga Newton")); // returns ["Doyle Erickson", "Doris Smith"]
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
