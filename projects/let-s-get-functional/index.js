@@ -212,24 +212,22 @@ var friendsCount = function(array, inputName){
 //-----------------------------------------------------------------------------------------------------------------------------
 
 var topThreeTags = function(array){
+  // make an object with reduce called tagCount
+  // tags as keys and count as values
   const tagCount = _.reduce(array, function(acc, current){
-    // for loop to go over tags array
+    // for loop to go over tags inner array
     for (let i = 0; i < current.tags.length; i++){
-      // object[key] = value
-      var key = tags[i];
+      //if current tag exists as a key in acc - yes add 1, no init 1
+      if (!acc[current.tags[i]]){
+        acc[current.tags[i]] = 1;
+      } else {
+        acc[current.tags[i]] += 1;
+      }
     }
-    // if statement to count the tags
-    if (current.tags.includes(key)){
-      value += 1;
-    }
-    // object[key] = value
-    acc[key] = value;
     return acc;
   }, {});
-  //empty array as seed
+  //console.log(tagCount); // tagCount object works
 };
-
-console.log(topThreeTags(data));
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
