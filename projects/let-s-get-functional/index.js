@@ -227,6 +227,26 @@ var topThreeTags = function(array){
     return acc;
   }, {});
   //console.log(tagCount); // tagCount object works
+  
+  //make tagCount into an array 
+  // Object.entries makes array of sub arrays - [0] is key [1] is value
+  const tagCountArray = Object.entries(tagCount);
+  //console.log(tagCountArray); // tagCountArray works
+  
+  // use array sort method - make array from highest to lowest value
+  tagCountArray.sort(function(a, b){
+    return b[1] - a[1];
+  });
+  //console.log(tagCountArray); // sort method works!
+  
+  // array for the top  three
+  const topThreeArray = [];
+  // push top three tags
+  topThreeArray.push(tagCountArray[0][0]);
+  topThreeArray.push(tagCountArray[1][0]);
+  topThreeArray.push(tagCountArray[2][0]);
+  
+  return topThreeArray;
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------
